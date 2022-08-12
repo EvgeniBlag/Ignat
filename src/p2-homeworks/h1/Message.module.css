@@ -1,6 +1,6 @@
 .message {
 display: flex;
-align-items: flex-end;
+/* align-items: flex-end; */
 margin: 10 px;
 }
 
@@ -12,7 +12,7 @@ margin: 10 px;
 }
 
 .content {
-    padding: 10%;
+    /* padding: 10%; */
     border-radius: 5px 5px 5px 0;
     background-color: rgba(255,255,255, 0,3);
 }
@@ -25,7 +25,7 @@ margin: 10 px;
 
 .text {
     min-width: 150px;
-    min-height: 300px;
+    /* min-height: 300px; */
     word-wrap:break-word
 }
 

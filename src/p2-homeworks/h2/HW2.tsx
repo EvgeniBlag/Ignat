@@ -25,27 +25,27 @@ const defaultAffairs: Array<AffairType> = [ // need to fix any
 export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): Array<AffairType> => { // need to fix any
     if (filter === 'all') return affairs
 
-    else if (filter === 'high') return affairs.filter((afair) => { afair.priority === 'high' })
+    else if (filter === 'high') return affairs.filter(afair =>  afair.priority === 'high' )
 
-        else if (filter === 'low') return affairs.filter((afair) => { afair.priority === 'low' })
+        else if (filter === 'low') return affairs.filter(afair =>  afair.priority === 'low')
 
-            else if (filter === 'middle') return affairs.filter((afair) => { afair.priority === 'middle' })
+            else if (filter === 'middle') return affairs.filter( afair =>  afair.priority === 'middle' )
 
     return affairs
     // need to fix
 }
-export const deleteAffair = (affairs: Array<AffairType>, _id: number): any => { // need to fix any
+export const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<AffairType> => { // need to fix any
 
     return affairs.filter( affair => affair._id !== _id ) // need to fix
 }
 
 function HW2() {
-    const [affairs, setAffairs] = useState(defaultAffairs) // need to fix any
+    const [affairs, setAffairs] = useState <Array<AffairType>> (defaultAffairs) // need to fix any
     const [filter, setFilter] = useState<FilterType>('all')
 
     const filteredAffairs = filterAffairs(affairs, filter)
     const deleteAffairCallback = (_id: number) => setAffairs(deleteAffair(affairs, _id)) // need to fix any
-
+    // console.log(filteredAffairs)
     return (
         <div>
             <hr/>

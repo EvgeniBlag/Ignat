@@ -6,6 +6,7 @@ import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox'
 
 function HW4() {
     const [text, setText] = useState<string>('')
+    const [style, setStyle] = useState<{backgroundColor: string}>({backgroundColor: 'green'})
     const error = text ? '' : 'error'
 
     const showAlert = () => {
@@ -15,9 +16,19 @@ function HW4() {
             alert(text) // если нет ошибки показать текст
         }
     }
+    const changeColor = () => {
+        setStyle({backgroundColor: 'pink'})
+    }
 
     const [checked, setChecked] = useState<boolean>(false)
     const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked)
+
+
+
+    const [test,setTest] = useState<{bakgroundColor:string}>({bakgroundColor:'blue'})
+    const lockTest =()=>{
+        setTest({bakgroundColor:'black'})
+    }
 
     return (
         <div>
@@ -28,13 +39,15 @@ function HW4() {
                 <SuperInputText
                     value={text}
                     onChangeText={setText}
-                    onEnter={showAlert}
+                    onEnter={changeColor}
                     error={error}
+                    style={style}
                     // spanClassName={s.testSpanError}
                 />
 
                 <SuperInputText
-                    className={s.blue} // проверьте, рабоет ли смешивание классов
+                    // className={s.blue} // проверьте, рабоет ли смешивание классов
+                    onEnter={lockTest}
                 />
 
                 {/*----------------------------------------------------*/}
@@ -46,6 +59,7 @@ function HW4() {
                 <SuperButton
                     red // пропсу с булевым значением не обязательно указывать true
                     onClick={showAlert}
+                    
                 >
                     delete {/*// название кнопки попадёт в children*/}
                 </SuperButton>

@@ -25,10 +25,7 @@ function HW4() {
 
 
 
-    const [test,setTest] = useState<{bakgroundColor:string}>({bakgroundColor:'blue'})
-    const lockTest =()=>{
-        setTest({bakgroundColor:'black'})
-    }
+   
 
     return (
         <div>
@@ -46,8 +43,8 @@ function HW4() {
                 />
 
                 <SuperInputText
-                    // className={s.blue} // проверьте, рабоет ли смешивание классов
-                    onEnter={lockTest}
+                     className={s.blue} // проверьте, рабоет ли смешивание классов
+                  
                 />
 
                 {/*----------------------------------------------------*/}

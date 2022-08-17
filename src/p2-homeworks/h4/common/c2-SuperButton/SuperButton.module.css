@@ -76,3 +76,11 @@
     color:#005500;
     cursor: auto;
 }
+
+.button:disabled::after {
+    z-index: -1;
+}
+
+.button:disabled::before {
+    z-index: -1;
+}
